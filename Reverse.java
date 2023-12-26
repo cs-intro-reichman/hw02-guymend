@@ -14,7 +14,7 @@ public class Reverse {
 			}
 		}
 		if(word.length() % 2 == 0){
-			System.out.println("The middle character is " + word.charAt((word.length() / 2)) - 1);
+			System.out.println("The middle character is " + word.charAt((word.length() / 2) - 1));
 		}else{
 			System.out.println("The middle character is " + word.charAt(word.length() / 2));
 		}
