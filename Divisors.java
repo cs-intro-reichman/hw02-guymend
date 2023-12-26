@@ -7,9 +7,9 @@ public class Divisors {
 		int number = Integer.valueOf(args[0]);
 		for (int i = 0; i < number / 2; i++ ) {
 			if(number % i == 0){
-				system.out.println(i);
+				System.out.println(i);
 			}
 		}
-		system.out.println(number);
+		System.out.println(number);
 	}
 }
