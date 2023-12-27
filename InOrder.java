@@ -9,7 +9,7 @@ public class InOrder {
 		int previousNumber = 0;
 		while(previousNumber <= number){
 			previousNumber = number;
-			System.out.print( number );
+			System.out.print( number + " " );
 			number = (int)( Math.random() * 10 );
 		}
 	}
