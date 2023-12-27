@@ -7,28 +7,37 @@
 public class OneOfEachStats1 {
 	public static void main (String[] args) {
 		//// Put your code here
-		boolean noGirl = true;
-		boolean noBoy = true;
-		int amountOfChildren = 0;
-		while( noBoy || noGirl ){
-			amountOfChildren++;
-			if(Math.random() > 0.5){
-				if(!noBoy){
-					System.out.println("g");
+		int t = int.valueOf(args[0]);
+		double totalAmountOfChildren = 0;
+		int mostCommonAmountOfChildren = 0;
+		int[] familySize = new int[1000000]; 
+		
+		for(int i = 1; i < t; i++ ){
+			boolean noGirl = true;
+			boolean noBoy = true;
+			int amountOfChildren = 0;
+			while( noBoy || noGirl ){
+				amountOfChildren++;
+				if(Math.random() > 0.5){
+					noGirl = false;
 				}else{
-					System.out.print("g ");
+					noBoy = false;
 				}
-				noGirl = false;
-			}else{
-				if(!noGirl){
-					System.out.println("b");
-				}else{
-					System.out.print("b ");
-				}
-				noBoy = false;
+			}
+			totalAmountOfChildren = totalAmountOfChildren + amountOfChildren;
+			familySize[amountOfChildren] = familySize[amountOfChildren] + 1;
+		}
+		
+		for(int j = 0; j < familySize.length(); j++ ){
+			if(familySize[j] > mostCommonAmountOfChildren){
+				mostCommonAmountOfChildren = familySize[j];
 			}
 		}
-
-		System.out.println("You made it... and you now have " + amountOfChildren + " children");
+		
+		System.out.println("Average: " + avgAmountOfChildren + "  children to get at least one of each gender.");
+		System.out.println("Number of families with 2 children " + familySize[2]);
+		System.out.println("Number of families with 3 children " + familySize[3]);
+		System.out.println("Number of families with 4 children " + familySize[4]);
+		System.out.println("The most common number of children is " + (totalAmountOfChildren / t));
 	}
 }
