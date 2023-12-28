@@ -29,7 +29,7 @@ public class OneOfEachStats {
 		int totalAmountOfChildren = 0;
 		int mostCommonAmountOfChildren = 0;
 		int[] familySize = new int[1000000]; 
-		
+		double avgAmountOfChildren = 0;
 		for(int i = 1; i < T; i++ ){
 			boolean noGirl = true;
 			boolean noBoy = true;
@@ -53,7 +53,8 @@ public class OneOfEachStats {
 			}
 		}
 		
-		System.out.println("Average: " + (totalAmountOfChildren / T) + "  children to get at least one of each gender.");
+		avgAmountOfChildren = totalAmountOfChildren / T;
+		System.out.println("Average: " + avgAmountOfChildren + " children to get at least one of each gender.");
 		System.out.println("Number of families with 2 children " + familySize[2]);
 		System.out.println("Number of families with 3 children " + familySize[3]);
 		System.out.println("Number of families with 4 children " + familySize[4]);
