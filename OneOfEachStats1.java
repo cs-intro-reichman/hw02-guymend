@@ -7,18 +7,18 @@
 public class OneOfEachStats1 {
 	public static void main (String[] args) {
 		//// Put your code here
-		int t = int.valueOf(args[0]);
+		int t = int.parseInt(args[0]);
 		double totalAmountOfChildren = 0;
 		int mostCommonAmountOfChildren = 0;
 		int[] familySize = new int[1000000]; 
 		
-		for(int i = 0; i < t; i++ ){
+		for (int i = 0; i < t; i++ ) {
 			boolean noGirl = true;
 			boolean noBoy = true;
 			int amountOfChildren = 0;
-			while( noBoy || noGirl ){
+			while (noBoy || noGirl) {
 				amountOfChildren++;
-				if(Math.random() >= 0.5){
+				if (Math.random() >= 0.5) {
 					noGirl = false;
 				}else{
 					noBoy = false;
@@ -28,8 +28,8 @@ public class OneOfEachStats1 {
 			familySize[amountOfChildren] = familySize[amountOfChildren] + 1;
 		}
 		
-		for(int j = 0; j < familySize.length(); j++ ){
-			if(familySize[j] > mostCommonAmountOfChildren){
+		for (int j = 0; j < familySize.length(); j++ ) {
+			if (familySize[j] > mostCommonAmountOfChildren) {
 				mostCommonAmountOfChildren = familySize[j];
 			}
 		}

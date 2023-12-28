@@ -30,29 +30,29 @@ public class OneOfEachStats {
 		int amountOfFamilies = 0;
 		int mostCommonAmountOfChildren = 0;
 		int[] familySize = new int[5]; 
-		for(int i = 0; i < T; i++ ){
+		for (int i = 0; i < T; i++ ) {
 			boolean noGirl = true;
 			boolean noBoy = true;
 			int amountOfChildren = 0;
-			while( noBoy || noGirl ){
+			while (noBoy || noGirl) {
 				double randomNumber = generator.nextDouble();
 				amountOfChildren++;
-				if(randomNumber >= 0.5){
+				if (randomNumber >= 0.5) {
 					noGirl = false;
 				}else{
 					noBoy = false;
 				}
 			}
 			totalAmountOfChildren = totalAmountOfChildren + amountOfChildren;
-			if(amountOfChildren > 4){
+			if (amountOfChildren > 4) {
 				familySize[4] = familySize[4] + 1;
 			}else{
 				familySize[amountOfChildren] = familySize[amountOfChildren] + 1;
 			}
 		}
 		
-		for(int j = 0; j < familySize.length; j++ ){
-			if(familySize[j] > amountOfFamilies){
+		for (int j = 0; j < familySize.length; j++ ) {
+			if (familySize[j] > amountOfFamilies) {
 				amountOfFamilies = familySize[j];
 				mostCommonAmountOfChildren = j;
 			}
@@ -62,7 +62,7 @@ public class OneOfEachStats {
 		System.out.println("Number of families with 2 children: " + familySize[2]);
 		System.out.println("Number of families with 3 children: " + familySize[3]);
 		System.out.println("Number of families with 4 or more children: " + familySize[4]);
-		if(mostCommonAmountOfChildren > 4){
+		if (mostCommonAmountOfChildren > 4) {
 			System.out.println("The most common number of children is 4 or more.");
 		}else{
 			System.out.println("The most common number of children is " + mostCommonAmountOfChildren + ".");

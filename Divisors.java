@@ -4,9 +4,9 @@
 public class Divisors {
 	public static void main (String[] args) {
 		//// Put your code here
-		int number = Integer.valueOf(args[0]);
+		int number = Integer.parseInt(args[0]);
 		for (int i = 1; i < (number / 2) + 1; i++ ) {
-			if(number % i == 0){
+			if (number % i == 0) {
 				System.out.println(i);
 			}
 		}

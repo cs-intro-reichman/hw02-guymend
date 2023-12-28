@@ -9,17 +9,17 @@ public class OneOfEach {
 		boolean noGirl = true;
 		boolean noBoy = true;
 		int amountOfChildren = 0;
-		while( noBoy || noGirl ){
+		while (noBoy || noGirl) {
 			amountOfChildren++;
-			if(Math.random() > 0.5){
-				if(!noBoy){
+			if (Math.random() > 0.5) {
+				if (!noBoy) {
 					System.out.println("g");
 				}else{
 					System.out.print("g ");
 				}
 				noGirl = false;
 			}else{
-				if(!noGirl){
+				if (!noGirl) {
 					System.out.println("b");
 				}else{
 					System.out.print("b ");
