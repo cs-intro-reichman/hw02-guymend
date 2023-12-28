@@ -31,11 +31,11 @@ public class OneOfEachStats {
 		int[] familySize = new int[1000000]; 
 		
 		for(int i = 1; i < T; i++ ){
-			double randomNumber = generator.nextDouble();
 			boolean noGirl = true;
 			boolean noBoy = true;
 			int amountOfChildren = 0;
 			while( noBoy || noGirl ){
+				double randomNumber = generator.nextDouble();
 				amountOfChildren++;
 				if(randomNumber >= 0.5){
 					noGirl = false;
