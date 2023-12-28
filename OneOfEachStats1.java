@@ -12,7 +12,7 @@ public class OneOfEachStats1 {
 		int mostCommonAmountOfChildren = 0;
 		int[] familySize = new int[1000000]; 
 		
-		for(int i = 1; i < t; i++ ){
+		for(int i = 0; i < t; i++ ){
 			boolean noGirl = true;
 			boolean noBoy = true;
 			int amountOfChildren = 0;
