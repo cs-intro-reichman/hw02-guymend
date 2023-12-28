@@ -18,7 +18,7 @@ public class OneOfEachStats1 {
 			int amountOfChildren = 0;
 			while( noBoy || noGirl ){
 				amountOfChildren++;
-				if(Math.random() > 0.5){
+				if(Math.random() >= 0.5){
 					noGirl = false;
 				}else{
 					noBoy = false;

@@ -13,7 +13,7 @@ public class OneOfEachStats {
 		int T = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
 		// Initailizes a random numbers generator with the given seed value
-        Random generator = new Random(seed);  
+        Random generator = new Random(seed); 
 		
 		//// In the previous version of this program, you used a statement like:
 		//// double rnd = Math.random();
@@ -24,6 +24,40 @@ public class OneOfEachStats {
 		//// just like you had in the previous version, except that the 
 		//// randomization will be based on the given seed.
 		//// This is the only change that you have to do in the program.
+
+		//My code
+		int totalAmountOfChildren = 0;
+		int mostCommonAmountOfChildren = 0;
+		int[] familySize = new int[1000000]; 
+		
+		for(int i = 1; i < T; i++ ){
+			double randomNumber = generator.nextDouble();
+			boolean noGirl = true;
+			boolean noBoy = true;
+			int amountOfChildren = 0;
+			while( noBoy || noGirl ){
+				amountOfChildren++;
+				if(randomNumber >= 0.5){
+					noGirl = false;
+				}else{
+					noBoy = false;
+				}
+			}
+			totalAmountOfChildren = totalAmountOfChildren + amountOfChildren;
+			familySize[amountOfChildren] = familySize[amountOfChildren] + 1;
+		}
+		
+		for(int j = 0; j < familySize.length; j++ ){
+			if(familySize[j] > mostCommonAmountOfChildren){
+				mostCommonAmountOfChildren = familySize[j];
+			}
+		}
+		
+		System.out.println("Average: " + (totalAmountOfChildren / T) + "  children to get at least one of each gender.");
+		System.out.println("Number of families with 2 children " + familySize[2]);
+		System.out.println("Number of families with 3 children " + familySize[3]);
+		System.out.println("Number of families with 4 children " + familySize[4]);
+		System.out.println("The most common number of children is " + mostCommonAmountOfChildren);
 		    
 	}
 }
